@@ -1,0 +1,21 @@
+get the smb share to work directly on proxmox
+
+
+HOMARR for homepage
+
+Media downloaders
+sonarr
+radarr
+readarr
+lidarr
+prowlarr
+qbitorrent
+jellyseer
+
+Media Clients
+Jellyfin
+kavita
+audiobookshelf
+freshrss
+mealie
+
