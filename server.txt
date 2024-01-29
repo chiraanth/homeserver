@@ -2,6 +2,9 @@ get the smb share to work directly on proxmox
 
 
 HOMARR for homepage
+Nextcloud and onlyoffice
+
+
 
 Media downloaders
 sonarr
