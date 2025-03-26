@@ -1,4 +1,4 @@
-<h1 align="center">🏠 Chiraanth's HomeServer</h1>
+<h1 align="center">🏠 Chiraanth's Homeserver</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Built%20with-Docker-blue?logo=docker&style=flat-square" alt="Built with Docker"/>
   <img src="https://img.shields.io/github/stars/chiraanth/homeserver?style=social" alt="GitHub Stars"/>
