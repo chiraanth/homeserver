@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://github.com/chiraanth/homeserver/raw/main/assets/banner.png" alt="Chiraanth's HomeServer Banner"/>
+  <img src="https://github.com/chiraanth/homeserver/raw/main/assets/banner.png" width="800" alt="Chiraanth's HomeServer Banner"/>
 </p>
+
 
 <h1 align="center">🏠 Chiraanth's HomeServer</h1>
 <p align="center">
