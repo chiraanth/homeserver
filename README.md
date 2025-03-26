@@ -2,7 +2,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Built%20with-Docker-blue?logo=docker&style=flat-square" alt="Built with Docker"/>
   <img src="https://img.shields.io/github/stars/chiraanth/homeserver?style=social" alt="GitHub Stars"/>
-  <img src="https://img.shields.io/github/license/chiraanth/homeserver" alt="License"/>
   <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status"/>
 </p>
 
