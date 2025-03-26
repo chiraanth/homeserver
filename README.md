@@ -1,4 +1,8 @@
-# 🏠 Chiraanth's HomeServer
+<p align="center">
+  <img src="https://github.com/chiraanth/homeserver/raw/main/assets/banner.png" alt="Chiraanth's HomeServer Banner"/>
+</p>
+
+<h1 align="center">🏠 Chiraanth's HomeServer</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Built%20with-Docker-blue?logo=docker&style=flat-square"/>
   <img src="https://img.shields.io/github/stars/chiraanth/homeserver?style=social"/>
@@ -149,7 +153,7 @@ And it’s always evolving.
 - Expand an LVM pool?
 - Mount and remap volumes?
 
-➡️ [Check the guide in ](./docs/add-disk-lvm-guide.md)[`/docs/add-disk-lvm-guide.md`](./docs/add-disk-lvm-guide.md)
+➡️ [Check the guide in](./docs/add-disk-lvm-guide.md)
 
 ---
 
@@ -174,6 +178,7 @@ MIT — free to use, fork, remix.
 
 > ⭐ Star this repo if it gave you ideas. Or fork it and build something even better.
 
+---
 
 <p align="center">
   <strong>⭐ If you like this project, give it a star — or fork it and build your own homelab empire.</strong><br/>
