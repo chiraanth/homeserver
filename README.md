@@ -113,7 +113,6 @@ Each tool is handpicked to cover a core media function:
 ### ⚙️ Infrastructure / UI
 
 - **[Tailscale](https://tailscale.com/)**: Creates a secure WireGuard mesh VPN. Lets me access all services remotely (even behind CGNAT or firewalls) without exposing any ports to the public internet.
-
 - **[Nginx Proxy Manager](https://nginxproxymanager.com/)**: Lets me use local DNS names like `jellyfin.local` or external domains. Handles HTTPS automatically with Let's Encrypt.
 - **[Portainer](https://www.portainer.io/)**: Clickable UI for managing Docker containers and stacks.
 - **[FlareSolverr](https://github.com/FlareSolverr/FlareSolverr)**: Bypasses Cloudflare & bot protection for indexers.
