@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="https://github.com/chiraanth/homeserver/raw/main/assets/banner.png" alt="Chiraanth's HomeServer Banner" width="1000"/>
-</p>
-
-
 <h1 align="center">🏠 Chiraanth's HomeServer</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Built%20with-Docker-blue?logo=docker&style=flat-square"/>
