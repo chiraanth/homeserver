@@ -1,0 +1,13 @@
+# docker-compose/media/tidarr.yml
+# NOTE: Self-hosted TIDAL downloader using a Lidarr-style interface.
+
+services:
+  tidarr:
+    image: cstaelen/tidarr
+    container_name: 'tidarr'
+    ports:
+      - 8484:8484
+    volumes:
+      - ./config:/home/app/standalone/shared
+      - ./download:/home/app/standalone/download
+    restart: unless-stopped

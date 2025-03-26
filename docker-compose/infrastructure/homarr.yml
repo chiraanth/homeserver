@@ -1,0 +1,17 @@
+# docker-compose/infrastructure/homarr.yml
+# NOTE: Replace volume paths with your actual Homarr config/icon/data locations.
+
+version: '3'
+
+services:
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - /your/storage/path/homarr/configs:/app/data/configs
+      - /your/storage/path/homarr/icons:/app/public/icons
+      - /your/storage/path/homarr/data:/data
+    ports:
+      - '7575:7575'

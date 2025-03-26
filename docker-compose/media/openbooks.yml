@@ -1,0 +1,25 @@
+# docker-compose/media/openbooks.yml
+# NOTE: OpenBooks - A torrent-based ebook search engine using IRC.
+
+version: "3.9"
+
+services:
+  openbooks:
+    image: evanbuss/openbooks:latest
+    command:
+      - '-n mariushosting' # IRC nickname
+      - '--persist'
+    container_name: OpenBooks
+    hostname: openbooks
+    mem_limit: 1g
+    cpu_shares: 768
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    ports:
+      - 6081:80
+    volumes:
+      - /your/storage/path/openbook:/books:rw
+    environment:
+      BASE_PATH: /openbooks/
+    restart: on-failure:5

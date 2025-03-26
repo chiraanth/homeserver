@@ -1,0 +1,26 @@
+# docker-compose/media/transmission.yml
+# NOTE: BitTorrent client with optional web UI authentication and custom settings.
+
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - TRANSMISSION_WEB_HOME=        # optional custom UI path
+      - USER=                         # optional web UI user
+      - PASS=                         # optional web UI password
+      - WHITELIST=                    # optional IP whitelist
+      - PEERPORT=                     # optional peer port override
+      - HOST_WHITELIST=              # optional hostname whitelist
+    volumes:
+      - /your/storage/path/transmission/config:/config
+      - /your/storage/path/data/downloads:/downloads
+      - /your/storage/path/transmission/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped

@@ -1,0 +1,28 @@
+# docker-compose/media/jellyfin.yml
+# NOTE: Replace the volume paths with your actual config and media locations.
+
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - JELLYFIN_PublishedServerUrl=192.168.1.201
+      # - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - /your/storage/path/jellyfin/config:/config
+      - /your/storage/path/data:/data
+    ports:
+      - 8096:8096
+      - 8920:8920         # optional HTTPS
+      - 7359:7359/udp     # optional DLNA discovery
+      - 1900:1900/udp     # optional SSDP
+    restart: unless-stopped
+    # runtime: nvidia
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]

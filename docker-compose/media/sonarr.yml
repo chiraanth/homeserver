@@ -1,0 +1,19 @@
+# docker-compose/media/sonarr.yml
+# NOTE: Automated TV show downloader. Replace volume paths with your own.
+
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /your/storage/path/sonarr/config:/config
+      - /your/storage/path/data/Shows:/tv # optional
+      # - /your/storage/path/data/Anime:/anime # optional
+      - /your/storage/path/data/Downloads:/downloads # optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped

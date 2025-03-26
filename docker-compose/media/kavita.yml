@@ -1,0 +1,15 @@
+# docker-compose/media/kavita.yml
+# NOTE: Replace the volume paths with your actual book/media/config locations.
+
+services:
+  kavita:
+    image: jvmilazz0/kavita:latest # Using the stable branch from the official repo.
+    container_name: kavita
+    volumes:
+      - /your/storage/path/data/Books:/books
+      - /your/storage/path/kavita/config:/kavita/config # /kavita/config must not be changed
+    environment:
+      - TZ=Asia/Kolkata
+    ports:
+      - 5000:5000 # Change the public port if needed
+    restart: unless-stopped

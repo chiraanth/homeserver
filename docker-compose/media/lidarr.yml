@@ -1,0 +1,21 @@
+# docker-compose/media/lidarr.yml
+# NOTE: Replace the volume paths with your actual music/config/downloads directories.
+
+services:
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - MAX_USER_WATCHES=524288
+    volumes:
+      - /your/storage/path/lidarr/config:/config
+      - /your/storage/path/data/Music:/music # optional
+      - /your/storage/path/data/Downloads:/downloads # optional
+      # - /your/storage/path/lidarr-ultimate/custom-services:/custom-services.d
+      # - /your/storage/path/lidarr-ultimate/custom-cont-init:/custom-cont-init.d
+    ports:
+      - 8686:8686
+    restart: unless-stopped

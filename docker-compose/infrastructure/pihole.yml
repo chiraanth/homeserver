@@ -1,0 +1,35 @@
+# docker-compose/infrastructure/pihole.yml
+# NOTE: Replace volumes and WEBPASSWORD before running.
+
+version: "3"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # To use DHCP: comment out ports below and use network_mode: "host"
+    # ports:
+    #   - "8881:53/tcp"
+    #   - "8882:53/udp"
+    #   - "8883:67/udp"
+    #   - "8884:80/tcp"
+    networks:
+      pihole:
+        ipv4_address: 10.0.0.X # Change as needed for your network
+    environment:
+      TZ: 'Asia/Kolkata'
+      WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
+    volumes:
+      - '/your/storage/path/pihole/resolv.conf:/etc/resolv.conf'
+      - '/your/storage/path/pihole/pihole:/etc/pihole'
+      - '/your/storage/path/pihole/dnsmasq:/etc/dnsmasq.d'
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+
+networks:
+  pihole:
+    name: pihole
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24

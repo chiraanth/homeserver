@@ -1,0 +1,17 @@
+# docker-compose/media/jellyseerr.yml
+# NOTE: Replace the volume path with your actual Jellyseerr config directory
+
+version: '3'
+
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=Asia/Kolkata
+    ports:
+      - 5055:5055
+    volumes:
+      - /your/storage/path/jellyseerr/config:/app/config
+    restart: unless-stopped

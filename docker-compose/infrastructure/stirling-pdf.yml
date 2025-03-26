@@ -1,0 +1,20 @@
+# docker-compose/infrastructure/stirling-pdf.yml
+# NOTE: Local PDF editing and OCR tool. Replace volume paths as needed.
+
+version: '3.3'
+
+services:
+  stirling-pdf:
+    image: frooodle/s-pdf:latest
+    restart: unless-stopped
+    ports:
+      - '8888:8080'
+    volumes:
+      - /your/storage/path/pdf_editor/trainingData:/usr/share/tessdata # OCR language data
+      - /your/storage/path/pdf_editor/config:/configs
+      # - /your/custom/path/customFiles:/customFiles/  # Optional: UI assets
+      # - /your/custom/path/logs:/logs/                # Optional: App logs
+    environment:
+      - DOCKER_ENABLE_SECURITY=false  # Safe in local/trusted setups
+      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=true
+      - LANGS=en_GB

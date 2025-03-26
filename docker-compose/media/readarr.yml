@@ -1,0 +1,18 @@
+# docker-compose/media/readarr.yml
+# NOTE: Automated ebook/manga/audio book downloader. Replace volume paths with your own.
+
+services:
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /your/storage/path/readarr/config:/config
+      - /your/storage/path/data/Books:/books # optional
+      - /your/storage/path/data/Downloads:/downloads # optional
+    ports:
+      - 8787:8787
+    restart: unless-stopped

@@ -1,0 +1,20 @@
+# docker-compose/media/navidrome.yml
+# NOTE: Self-hosted music server. Replace volume paths with actual config/music locations.
+
+version: "3"
+
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    user: 1000:1000 # should be the owner of volumes
+    ports:
+      - "4533:4533"
+    restart: unless-stopped
+    environment:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: ""
+    volumes:
+      - /your/storage/path/navidrome/config:/data
+      - /your/storage/path/data/Music:/music:ro # read-only access

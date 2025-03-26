@@ -1,0 +1,19 @@
+# docker-compose/media/deemix.yml
+# NOTE: Replace the volume paths with your actual music download and config locations.
+
+version: '3.3'
+
+services:
+  deemix:
+    image: registry.gitlab.com/bockiii/deemix-docker
+    container_name: Deemix
+    restart: unless-stopped
+    volumes:
+      - /your/storage/path/data/Music:/downloads
+      - /your/storage/path/deemix:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+    ports:
+      - 6595:6595

@@ -1,0 +1,11 @@
+# docker-compose/infrastructure/watchtower.yml
+# NOTE: Automatically updates running containers based on image updates.
+
+version: "3"
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped

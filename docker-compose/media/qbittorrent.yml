@@ -1,0 +1,20 @@
+# docker-compose/media/qbittorrent.yml
+# NOTE: Self-hosted torrent client. Replace volume paths with your own.
+
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - WEBUI_PORT=8080
+    volumes:
+      - /your/storage/path/qbittorrent/config:/config
+      - /your/storage/path/data/Downloads:/downloads
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped

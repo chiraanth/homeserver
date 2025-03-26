@@ -1,0 +1,16 @@
+# docker-compose/infrastructure/nginx-proxy-manager.yml
+# NOTE: Nginx Proxy Manager with custom ports. Replace volume paths as needed.
+
+version: '3.8'
+
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '65535:80'   # Public HTTP
+      - '65534:81'   # Admin UI
+      - '65533:443'  # HTTPS
+    volumes:
+      - /your/storage/path/nginx-proxy-manager/data:/data
+      - /your/storage/path/nginx-proxy-manager/letsencrypt:/etc/letsencrypt

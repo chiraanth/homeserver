@@ -1,0 +1,18 @@
+# docker-compose/infrastructure/docker-osx.yml
+# NOTE: This runs macOS in a container using QEMU. Linux host with KVM required.
+
+name: osx
+
+services:
+  docker-osx:
+    image: sickcodes/docker-osx:latest
+    stdin_open: true
+    tty: true
+    devices:
+      - /dev/kvm
+    ports:
+      - 50922:10022
+    volumes:
+      - /your/storage/path/macos:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY:-:0.0}

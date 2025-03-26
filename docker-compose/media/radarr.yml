@@ -1,0 +1,18 @@
+# docker-compose/media/radarr.yml
+# NOTE: Automated movie downloader. Replace volume paths with your actual directories.
+
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /your/storage/path/radarr/config:/config
+      - /your/storage/path/data/Movies:/movies # optional
+      - /your/storage/path/data/Downloads:/downloads # optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped

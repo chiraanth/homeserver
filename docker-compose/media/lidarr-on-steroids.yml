@@ -1,0 +1,17 @@
+# docker-compose/media/lidarr-on-steroids.yml
+# Combines Lidarr and Deemix into one container.
+
+version: "3"
+
+services:
+  lidarr:
+    image: youegraillot/lidarr-on-steroids
+    restart: unless-stopped
+    ports:
+      - "8686:8686" # Lidarr web UI
+      - "6595:6595" # Deemix web UI
+    volumes:
+      - /your/storage/path/lidarr-on-steroids/config:/config
+      - /your/storage/path/lidarr-on-steroids/deemix_config:/config_deemix
+      - /your/storage/path/data/Downloads:/downloads
+      - /your/storage/path/data/Music:/music

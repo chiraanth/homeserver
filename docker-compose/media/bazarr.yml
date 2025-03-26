@@ -1,0 +1,20 @@
+# docker-compose/media/bazarr.yml
+# NOTE: Replace the volume paths with your actual config and media locations.
+
+version: '3.8'
+
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /your/storage/path/bazarr/config:/config
+      - /your/storage/path/data/Movies:/movies # optional
+      - /your/storage/path/data/Shows:/tv      # optional
+    ports:
+      - 6767:6767
+    restart: unless-stopped
