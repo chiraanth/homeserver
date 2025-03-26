@@ -1,10 +1,11 @@
 <h1 align="center">🏠 Chiraanth's HomeServer</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Built%20with-Docker-blue?logo=docker&style=flat-square"/>
-  <img src="https://img.shields.io/github/stars/chiraanth/homeserver?style=social"/>
-  <img src="https://img.shields.io/github/license/chiraanth/homeserver"/>
+  <img src="https://img.shields.io/github/stars/chiraanth/homeserver?style=social&label=Stars"/>
+  <img src="https://img.shields.io/github/license/chiraanth/homeserver?label=License"/>
   <img src="https://img.shields.io/badge/Status-Active-brightgreen"/>
 </p>
+
 
 Welcome to my homelab — a self-hosted powerhouse running dozens of containerized services to automate, secure, and manage everything from media to monitoring to backups. This setup is built on Docker Compose, designed to be modular, scalable, and privacy-respecting.
 
